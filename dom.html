@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<div>Слой</div>
+<div id="div_2">
+    Слой 2
+    <div>
+        Вложенный слой 3 в Слой 2
+        <div>Вложенный слой 4 в Слой 3</div>
+    </div>
+</div>
+<script>
+    //Пишем функцию showHead выводящую все элементы head. Выводим свойства nodeName и innerHTML в консоль
+    showHead= function(){
+        let massOfChildren = document.head.children;
+        for ( i=0; i<massOfChildren.length; i++){
+            console.log("nodeName: " + massOfChildren[i].nodeName + " innerHTML: " + massOfChildren[i].innerHTML);
+        }
+    }
+    //Пишем функцию showBody выводящую все элементы head. Выводим свойства nodeName и innerHTML в консоль
+    showBody = function (){
+        let massOfChildren = document.body.children;
+        for (i =0; i<massOfChildren.length ; i++){
+            console.log("nodeName: " + massOfChildren[i].nodeName + " innerHTML: " + massOfChildren[i].innerHTML);
+        }
+    }
+    //Пишем функцию, которая выводит все дочерние элементы на всю глубину вложенностей слоя 2. Выводим свойства nodeName и innerHTML в консоль
+    showDiv = function (){
+        let massOfChildren = document.getElementById('div_2').children;
+        for (i =0; i<massOfChildren.length ; i++){
+            console.log("nodeName: " + massOfChildren[i].nodeName + " innerHTML: " + massOfChildren[i].innerHTML);
+        }
+    }
+
+    showHead();
+    console.log('--------------');
+    showBody();
+    console.log('--------------');
+    showDiv();
+</script>
+</body>
+</html>
+
+<!-- let showBody = () => {
+        const body = document.body;
+        const listBody = body.childNodes
+        for (let i = 0; i < listBody.length; i++) {
+            if (!(listBody[i].nodeName == '#text')) {
+                console.log(`${listBody[i].nodeName} | ${listBody[i].innerHTML}`);
+            }
+        }
+    } -->
